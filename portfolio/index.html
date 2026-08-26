@@ -3,42 +3,36 @@
 
 <head>
     <meta charset="utf-8">
-
-    <meta
-        name="viewport"
-        content="width=device-width, initial-scale=1"
-    >
-
-    <meta property="og:title" content="NASARA DIGITAL">
-    <meta property="og:description" content="Website, aplikasi, digitalisasi, desain, dan berbagai solusi digital.">
-    <meta property="og:type" content="website">
-    <meta property="og:url" content="https://nasaradigital.web.id">
-    <meta property="og:image" content="https://nasaradigital.web.id/assets/images/nasara-logo.png">
-
-    <meta name="twitter:card" content="summary_large_image">
-    <link rel="canonical" href="https://nasaradigital.web.id/portfolio/">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
 
     <title>Portfolio | NASARA DIGITAL</title>
 
     <meta
         name="description"
-        content="Portfolio dan project NASARA DIGITAL dalam pengembangan website, aplikasi, digitalisasi, dan solusi digital."
+        content="Jelajahi concept project dan prototype NASARA DIGITAL untuk UMKM, sekolah, organisasi, administrasi, dan pelayanan publik."
     >
+
+    <meta property="og:title" content="Portfolio | NASARA DIGITAL">
+    <meta
+        property="og:description"
+        content="Concept project dan prototype solusi digital untuk UMKM, sekolah, organisasi, administrasi, dan pelayanan publik."
+    >
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://nasaradigital.web.id/portfolio/">
+    <meta
+        property="og:image"
+        content="https://is3.cloudhost.id/nasara-documents/05_BRANDING/LOGO/nasara_logo.png"
+    >
+
+    <meta name="twitter:card" content="summary_large_image">
+
+    <link rel="canonical" href="https://nasaradigital.web.id/portfolio/">
 
     <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link
-        rel="preconnect"
-        href="https://fonts.googleapis.com"
-    >
-
-    <link
-        rel="preconnect"
-        href="https://fonts.gstatic.com"
-        crossorigin
-    >
-
-    <link
-        href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@600;700&display=swap"
+        href="https://fonts.googleapis.com/css2?family=Quicksand:wght@400;500;600;700&display=swap"
         rel="stylesheet"
     >
 
@@ -61,30 +55,668 @@
     >
 
     <!-- NASARA CSS -->
+    <link rel="stylesheet" href="../assets/css/style.css">
+
     <link
-        rel="stylesheet"
-        href="../assets/css/style.css"
+        rel="icon"
+        type="image/png"
+        href="https://is3.cloudhost.id/nasara-documents/05_BRANDING/LOGO/nasara_logo.png"
     >
 
-    <link rel="icon" type="image/png" href="https://is3.cloudhost.id/nasara-documents/05_BRANDING/LOGO/nasara_logo.png">
-</head>
+    <!-- Portfolio-specific styles.
+         Diletakkan di file ini agar upgrade portfolio bisa dilakukan tanpa
+         mengubah CSS global website terlebih dahulu. -->
+    <style>
+        :root {
+            --nasara-blue: #3b82f6;
+            --nasara-light-blue: #5dade2;
+            --nasara-dark: #111827;
+            --nasara-muted: #64748b;
+            --nasara-light: #f8fafc;
+            --nasara-border: #e5e7eb;
+            --nasara-white: #ffffff;
+        }
 
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: "Quicksand", sans-serif;
+            color: var(--nasara-dark);
+            background: var(--nasara-white);
+        }
+
+        button,
+        input,
+        select,
+        textarea {
+            font-family: inherit;
+        }
+
+        .portfolio-hero-upgraded {
+            padding: 150px 0 72px;
+            position: relative;
+            overflow: hidden;
+            background:
+                radial-gradient(circle at 85% 15%, rgba(59, 130, 246, .10), transparent 28%),
+                linear-gradient(180deg, #ffffff 0%, #f8fbff 100%);
+            border-bottom: 1px solid rgba(229, 231, 235, .75);
+        }
+
+        .portfolio-hero-upgraded::after {
+            content: "";
+            position: absolute;
+            width: 280px;
+            height: 280px;
+            border: 1px solid rgba(59, 130, 246, .08);
+            border-radius: 50%;
+            right: -110px;
+            top: 80px;
+        }
+
+        .portfolio-eyebrow {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 7px 12px;
+            border-radius: 999px;
+            background: #eff6ff;
+            color: var(--nasara-blue);
+            font-size: .78rem;
+            font-weight: 700;
+            letter-spacing: .08em;
+            margin-bottom: 18px;
+        }
+
+        .portfolio-hero-title {
+            max-width: 920px;
+            font-size: clamp(2.35rem, 5vw, 4.65rem);
+            line-height: 1.06;
+            letter-spacing: -.045em;
+            font-weight: 700;
+            margin-bottom: 24px;
+        }
+
+        .portfolio-hero-title span {
+            color: var(--nasara-blue);
+        }
+
+        .portfolio-hero-copy {
+            max-width: 760px;
+            color: var(--nasara-muted);
+            font-size: 1.05rem;
+            line-height: 1.85;
+            margin-bottom: 0;
+        }
+
+        .portfolio-note {
+            margin-top: 30px;
+            display: inline-flex;
+            gap: 12px;
+            align-items: flex-start;
+            max-width: 720px;
+            padding: 15px 17px;
+            border: 1px solid #dbeafe;
+            border-radius: 16px;
+            background: rgba(239, 246, 255, .82);
+            color: #334155;
+            font-size: .92rem;
+            line-height: 1.65;
+        }
+
+        .portfolio-note i {
+            color: var(--nasara-blue);
+            font-size: 1.05rem;
+            margin-top: 2px;
+        }
+
+        .portfolio-overview {
+            padding: 28px 0;
+            background: #fff;
+            border-bottom: 1px solid var(--nasara-border);
+        }
+
+        .overview-card {
+            height: 100%;
+            padding: 20px 22px;
+            border: 1px solid var(--nasara-border);
+            border-radius: 18px;
+            background: #fff;
+        }
+
+        .overview-card strong {
+            display: block;
+            font-size: 1.55rem;
+            line-height: 1;
+            margin-bottom: 7px;
+            color: var(--nasara-dark);
+        }
+
+        .overview-card span {
+            color: var(--nasara-muted);
+            font-size: .88rem;
+        }
+
+        .portfolio-explorer {
+            padding: 72px 0 100px;
+            background: var(--nasara-light);
+        }
+
+        .portfolio-section-head {
+            display: flex;
+            justify-content: space-between;
+            align-items: end;
+            gap: 30px;
+            margin-bottom: 30px;
+        }
+
+        .portfolio-section-head h2 {
+            font-size: clamp(1.8rem, 3vw, 2.55rem);
+            font-weight: 700;
+            letter-spacing: -.03em;
+            margin: 6px 0 8px;
+        }
+
+        .portfolio-section-head p {
+            margin: 0;
+            color: var(--nasara-muted);
+            max-width: 620px;
+        }
+
+        .project-count {
+            flex: 0 0 auto;
+            color: var(--nasara-muted);
+            font-size: .92rem;
+            padding-bottom: 5px;
+        }
+
+        .project-count strong {
+            color: var(--nasara-dark);
+        }
+
+        .portfolio-tools {
+            padding: 18px;
+            margin-bottom: 28px;
+            border: 1px solid var(--nasara-border);
+            border-radius: 20px;
+            background: #fff;
+            box-shadow: 0 12px 35px rgba(15, 23, 42, .035);
+        }
+
+        .portfolio-search-wrap {
+            position: relative;
+        }
+
+        .portfolio-search-wrap > i {
+            position: absolute;
+            left: 16px;
+            top: 50%;
+            transform: translateY(-50%);
+            color: #94a3b8;
+            pointer-events: none;
+        }
+
+        .portfolio-search {
+            width: 100%;
+            min-height: 48px;
+            padding: 10px 16px 10px 44px;
+            border: 1px solid var(--nasara-border);
+            border-radius: 13px;
+            outline: none;
+            background: #fff;
+            color: var(--nasara-dark);
+            transition: .2s ease;
+        }
+
+        .portfolio-search:focus {
+            border-color: #93c5fd;
+            box-shadow: 0 0 0 4px rgba(59, 130, 246, .08);
+        }
+
+        .portfolio-sort {
+            min-height: 48px;
+            border-radius: 13px;
+            border-color: var(--nasara-border);
+            color: #475569;
+        }
+
+        .portfolio-filters {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 9px;
+            margin-top: 14px;
+        }
+
+        .portfolio-filter {
+            border: 1px solid var(--nasara-border);
+            background: #fff;
+            color: #475569;
+            border-radius: 999px;
+            padding: 8px 13px;
+            font-size: .85rem;
+            font-weight: 600;
+            transition: .2s ease;
+        }
+
+        .portfolio-filter:hover {
+            border-color: #bfdbfe;
+            color: var(--nasara-blue);
+            background: #f8fbff;
+        }
+
+        .portfolio-filter.active {
+            color: #fff;
+            background: var(--nasara-dark);
+            border-color: var(--nasara-dark);
+        }
+
+        .project-item {
+            display: flex;
+        }
+
+        .project-card-upgraded {
+            position: relative;
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            overflow: hidden;
+            border: 1px solid var(--nasara-border);
+            border-radius: 22px;
+            background: #fff;
+            transition: transform .25s ease, box-shadow .25s ease, border-color .25s ease;
+        }
+
+        .project-card-upgraded:hover {
+            transform: translateY(-5px);
+            border-color: #dbeafe;
+            box-shadow: 0 20px 45px rgba(15, 23, 42, .08);
+        }
+
+        .project-visual {
+            min-height: 190px;
+            padding: 24px;
+            display: flex;
+            align-items: flex-end;
+            justify-content: space-between;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .project-visual::before,
+        .project-visual::after {
+            content: "";
+            position: absolute;
+            border-radius: 50%;
+            border: 1px solid rgba(255, 255, 255, .22);
+        }
+
+        .project-visual::before {
+            width: 150px;
+            height: 150px;
+            top: -62px;
+            right: -25px;
+        }
+
+        .project-visual::after {
+            width: 85px;
+            height: 85px;
+            top: 20px;
+            right: 35px;
+        }
+
+        .visual-blue {
+            background: linear-gradient(135deg, #2563eb, #60a5fa);
+            color: #fff;
+        }
+
+        .visual-dark {
+            background: linear-gradient(135deg, #111827, #334155);
+            color: #fff;
+        }
+
+        .visual-cyan {
+            background: linear-gradient(135deg, #0369a1, #38bdf8);
+            color: #fff;
+        }
+
+        .visual-soft {
+            background: linear-gradient(135deg, #eff6ff, #dbeafe);
+            color: #2563eb;
+        }
+
+        .visual-slate {
+            background: linear-gradient(135deg, #334155, #64748b);
+            color: #fff;
+        }
+
+        .visual-indigo {
+            background: linear-gradient(135deg, #4338ca, #818cf8);
+            color: #fff;
+        }
+
+        .visual-teal {
+            background: linear-gradient(135deg, #0f766e, #5eead4);
+            color: #fff;
+        }
+
+        .visual-sky {
+            background: linear-gradient(135deg, #0284c7, #7dd3fc);
+            color: #fff;
+        }
+
+        .visual-icon {
+            width: 58px;
+            height: 58px;
+            display: grid;
+            place-items: center;
+            border-radius: 17px;
+            font-size: 1.65rem;
+            background: rgba(255, 255, 255, .16);
+            backdrop-filter: blur(7px);
+            border: 1px solid rgba(255, 255, 255, .2);
+            z-index: 1;
+        }
+
+        .visual-soft .visual-icon {
+            background: rgba(255,255,255,.7);
+            border-color: rgba(59,130,246,.10);
+        }
+
+        .project-number {
+            position: relative;
+            z-index: 1;
+            font-size: .78rem;
+            font-weight: 700;
+            letter-spacing: .1em;
+            opacity: .8;
+        }
+
+        .project-body {
+            padding: 25px;
+            display: flex;
+            flex-direction: column;
+            flex: 1;
+        }
+
+        .project-meta {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 7px;
+            margin-bottom: 14px;
+        }
+
+        .project-meta span {
+            display: inline-flex;
+            align-items: center;
+            min-height: 27px;
+            padding: 5px 9px;
+            border-radius: 999px;
+            background: #f1f5f9;
+            color: #475569;
+            font-size: .69rem;
+            font-weight: 700;
+            letter-spacing: .055em;
+        }
+
+        .project-meta .concept {
+            background: #eff6ff;
+            color: #2563eb;
+        }
+
+        .project-body h3 {
+            font-size: 1.33rem;
+            font-weight: 700;
+            line-height: 1.35;
+            letter-spacing: -.02em;
+            margin-bottom: 10px;
+        }
+
+        .project-description {
+            color: var(--nasara-muted);
+            font-size: .92rem;
+            line-height: 1.72;
+            margin-bottom: 18px;
+        }
+
+        .project-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 7px;
+            margin-bottom: 22px;
+        }
+
+        .project-tags span {
+            font-size: .75rem;
+            color: #64748b;
+            padding: 6px 9px;
+            border: 1px solid var(--nasara-border);
+            border-radius: 9px;
+            background: #fff;
+        }
+
+        .project-footer {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 10px;
+            margin-top: auto;
+            padding-top: 17px;
+            border-top: 1px solid #f1f5f9;
+        }
+
+        .project-status {
+            display: inline-flex;
+            align-items: center;
+            gap: 7px;
+            color: #64748b;
+            font-size: .8rem;
+            font-weight: 600;
+        }
+
+        .project-status i {
+            color: var(--nasara-blue);
+        }
+
+        .project-detail-btn {
+            border: 0;
+            background: transparent;
+            color: var(--nasara-blue);
+            font-size: .84rem;
+            font-weight: 700;
+            padding: 4px 0;
+        }
+
+        .project-detail-btn i {
+            transition: transform .2s ease;
+        }
+
+        .project-detail-btn:hover i {
+            transform: translateX(3px);
+        }
+
+        .portfolio-empty {
+            display: none;
+            padding: 52px 20px;
+            text-align: center;
+            border: 1px dashed #cbd5e1;
+            border-radius: 20px;
+            background: #fff;
+        }
+
+        .portfolio-empty i {
+            display: block;
+            font-size: 2rem;
+            color: #94a3b8;
+            margin-bottom: 10px;
+        }
+
+        .portfolio-empty h3 {
+            font-size: 1.2rem;
+            font-weight: 700;
+            margin-bottom: 5px;
+        }
+
+        .portfolio-empty p {
+            color: var(--nasara-muted);
+            margin-bottom: 0;
+        }
+
+        .portfolio-idea {
+            padding: 86px 0;
+            background: #fff;
+        }
+
+        .idea-box {
+            padding: clamp(28px, 5vw, 52px);
+            border-radius: 26px;
+            color: #fff;
+            background:
+                radial-gradient(circle at 100% 0%, rgba(96, 165, 250, .30), transparent 31%),
+                #111827;
+            overflow: hidden;
+        }
+
+        .idea-box .section-label {
+            color: #93c5fd;
+        }
+
+        .idea-box h2 {
+            max-width: 750px;
+            font-size: clamp(1.9rem, 3.5vw, 3rem);
+            font-weight: 700;
+            letter-spacing: -.035em;
+            margin: 10px 0 14px;
+        }
+
+        .idea-box p {
+            max-width: 680px;
+            color: #cbd5e1;
+            margin-bottom: 0;
+            line-height: 1.8;
+        }
+
+        .idea-box .btn {
+            white-space: nowrap;
+        }
+
+        .project-modal .modal-content {
+            border: 0;
+            border-radius: 24px;
+            overflow: hidden;
+            box-shadow: 0 25px 70px rgba(15, 23, 42, .16);
+        }
+
+        .project-modal .modal-header {
+            padding: 22px 24px;
+            border-bottom: 1px solid #eef2f7;
+        }
+
+        .project-modal .modal-body {
+            padding: 25px;
+        }
+
+        .modal-project-label {
+            display: inline-flex;
+            padding: 6px 10px;
+            border-radius: 999px;
+            background: #eff6ff;
+            color: #2563eb;
+            font-size: .72rem;
+            font-weight: 700;
+            margin-bottom: 12px;
+        }
+
+        .modal-section {
+            padding: 16px 0;
+            border-bottom: 1px solid #f1f5f9;
+        }
+
+        .modal-section:last-child {
+            border-bottom: 0;
+            padding-bottom: 0;
+        }
+
+        .modal-section small {
+            display: block;
+            color: #94a3b8;
+            font-weight: 700;
+            letter-spacing: .06em;
+            margin-bottom: 6px;
+        }
+
+        .modal-section p {
+            color: #475569;
+            line-height: 1.75;
+            margin-bottom: 0;
+        }
+
+        @media (max-width: 991.98px) {
+            .portfolio-hero-upgraded {
+                padding-top: 125px;
+            }
+
+            .portfolio-section-head {
+                display: block;
+            }
+
+            .project-count {
+                margin-top: 12px;
+            }
+        }
+
+        @media (max-width: 575.98px) {
+            .portfolio-hero-upgraded {
+                padding: 112px 0 55px;
+            }
+
+            .portfolio-explorer {
+                padding: 55px 0 75px;
+            }
+
+            .portfolio-tools {
+                padding: 13px;
+                border-radius: 17px;
+            }
+
+            .portfolio-filter {
+                font-size: .78rem;
+                padding: 7px 10px;
+            }
+
+            .project-visual {
+                min-height: 160px;
+            }
+
+            .project-body {
+                padding: 21px;
+            }
+
+            .project-footer {
+                align-items: flex-end;
+            }
+
+            .idea-box .btn {
+                width: 100%;
+                margin-top: 24px;
+            }
+        }
+    </style>
+</head>
 
 <body>
 
     <!-- Navbar -->
     <nav class="navbar navbar-expand-lg navbar-light fixed-top nasara-navbar">
-
         <div class="container">
 
             <a class="navbar-brand d-flex align-items-center gap-2" href="/">
                 <img
                     src="https://is3.cloudhost.id/nasara-documents/05_BRANDING/LOGO/nasara_logo.png"
-                    alt="NASARA DIGITAL"
+                    alt="Logo NASARA DIGITAL"
                     width="34"
                     height="34"
                 >
-
                 <span>NASARA</span>
             </a>
 
@@ -93,404 +725,1092 @@
                 type="button"
                 data-bs-toggle="collapse"
                 data-bs-target="#portfolioNavbar"
+                aria-controls="portfolioNavbar"
+                aria-expanded="false"
+                aria-label="Buka navigasi"
             >
                 <span class="navbar-toggler-icon"></span>
             </button>
 
-            <div
-                class="collapse navbar-collapse"
-                id="portfolioNavbar"
-            >
-
+            <div class="collapse navbar-collapse" id="portfolioNavbar">
                 <ul class="navbar-nav ms-auto align-items-lg-center gap-lg-3">
-
                     <li class="nav-item">
-                        <a class="nav-link" href="/">
-                            Beranda
-                        </a>
+                        <a class="nav-link" href="/">Beranda</a>
                     </li>
 
                     <li class="nav-item">
-                        <a class="nav-link active" href="/portfolio/">
-                            Portfolio
-                        </a>
+                        <a class="nav-link active" href="/portfolio/">Portfolio</a>
                     </li>
 
                     <li class="nav-item">
-                        <a
-                            class="btn btn-nasara ms-lg-2"
-                            href="/links/"
-                        >
+                        <a class="btn btn-nasara ms-lg-2" href="/links/">
                             Hubungi Kami
                         </a>
                     </li>
-
                 </ul>
-
             </div>
 
         </div>
-
     </nav>
 
 
     <main>
 
-        <!-- Portfolio Hero -->
-        <section class="portfolio-hero">
-
+        <!-- Hero -->
+        <section class="portfolio-hero-upgraded">
             <div class="container">
 
                 <div class="row">
+                    <div class="col-xl-10">
 
-                    <div class="col-lg-8">
-
-                        <span
-                            class="section-label"
-                            data-aos="fade-up"
-                        >
-                            PORTFOLIO
+                        <span class="portfolio-eyebrow" data-aos="fade-up">
+                            <i class="bi bi-grid-1x2"></i>
+                            PORTFOLIO & NASARA LAB
                         </span>
 
                         <h1
-                            class="portfolio-title"
+                            class="portfolio-hero-title"
                             data-aos="fade-up"
-                            data-aos-delay="100"
+                            data-aos-delay="80"
                         >
-                            Project yang kami bangun
-                            untuk belajar,
-                            bereksperimen, dan
-                            <span>memberikan solusi.</span>
+                            Ide sederhana untuk
+                            <span>masalah yang nyata.</span>
                         </h1>
 
                         <p
-                            class="portfolio-description"
+                            class="portfolio-hero-copy"
                             data-aos="fade-up"
-                            data-aos-delay="200"
+                            data-aos-delay="150"
                         >
-                            Beberapa project merupakan prototype
-                            dan concept project yang dikembangkan
-                            NASARA untuk menunjukkan bagaimana
-                            teknologi dapat digunakan untuk
-                            menyelesaikan kebutuhan sehari-hari.
+                            Kumpulan prototype dan concept project NASARA untuk
+                            membantu pencatatan, administrasi, pelayanan, dan
+                            pekerjaan sehari-hari menjadi lebih sederhana.
                         </p>
 
-                    </div>
+                        <div
+                            class="portfolio-note"
+                            data-aos="fade-up"
+                            data-aos-delay="220"
+                        >
+                            <i class="bi bi-info-circle"></i>
+                            <span>
+                                Project pada halaman ini masih berupa konsep,
+                                prototype, atau project pengembangan internal.
+                                Label akan diperbarui jika suatu project sudah
+                                benar-benar digunakan.
+                            </span>
+                        </div>
 
+                    </div>
                 </div>
 
             </div>
-
         </section>
 
 
-        <!-- Projects -->
-        <section class="portfolio-projects">
-
+        <!-- Ringkasan -->
+        <section class="portfolio-overview">
             <div class="container">
 
-                <div class="row g-4">
+                <div class="row g-3">
 
-                    <!-- Project 1 -->
-                    <div
-                        class="col-lg-6"
-                        data-aos="fade-up"
-                    >
-
-                        <article class="portfolio-card">
-
-                            <div class="portfolio-preview preview-blue">
-
-                                <i class="bi bi-box-seam"></i>
-
-                            </div>
-
-                            <div class="portfolio-content">
-
-                                <div class="portfolio-meta">
-
-                                    <span>CONCEPT PROJECT</span>
-
-                                    <span>WEB APPLICATION</span>
-
-                                </div>
-
-                                <h2>
-                                    Sistem Peminjaman Barang
-                                </h2>
-
-                                <p>
-                                    Prototype sistem sederhana untuk
-                                    membantu sekolah, kantor, atau organisasi
-                                    mencatat peminjaman dan pengembalian barang.
-                                </p>
-
-                                <div class="portfolio-tags">
-
-                                    <span>Administrasi</span>
-
-                                    <span>Inventaris</span>
-
-                                    <span>Web App</span>
-
-                                </div>
-
-                                <div class="portfolio-status">
-
-                                    <i class="bi bi-clock"></i>
-
-                                    Dalam pengembangan
-
-                                </div>
-
-                            </div>
-
-                        </article>
-
+                    <div class="col-6 col-lg-3">
+                        <div class="overview-card">
+                            <strong id="totalProjectOverview">12</strong>
+                            <span>Ide project</span>
+                        </div>
                     </div>
 
-
-                    <!-- Project 2 -->
-                    <div
-                        class="col-lg-6"
-                        data-aos="fade-up"
-                        data-aos-delay="100"
-                    >
-
-                        <article class="portfolio-card">
-
-                            <div class="portfolio-preview preview-dark">
-
-                                <i class="bi bi-tools"></i>
-
-                            </div>
-
-                            <div class="portfolio-content">
-
-                                <div class="portfolio-meta">
-
-                                    <span>CONCEPT PROJECT</span>
-
-                                    <span>UMKM</span>
-
-                                </div>
-
-                                <h2>
-                                    Sistem Pencatatan Servis
-                                </h2>
-
-                                <p>
-                                    Konsep aplikasi untuk membantu usaha jasa
-                                    mencatat pelanggan, barang, keluhan,
-                                    pekerjaan, biaya, dan riwayat servis.
-                                </p>
-
-                                <div class="portfolio-tags">
-
-                                    <span>UMKM</span>
-
-                                    <span>Servis</span>
-
-                                    <span>Digitalisasi</span>
-
-                                </div>
-
-                                <div class="portfolio-status">
-
-                                    <i class="bi bi-clock"></i>
-
-                                    Direncanakan
-
-                                </div>
-
-                            </div>
-
-                        </article>
-
+                    <div class="col-6 col-lg-3">
+                        <div class="overview-card">
+                            <strong>6</strong>
+                            <span>Bidang kebutuhan</span>
+                        </div>
                     </div>
 
-
-                    <!-- Project 3 -->
-                    <div
-                        class="col-lg-6"
-                        data-aos="fade-up"
-                    >
-
-                        <article class="portfolio-card">
-
-                            <div class="portfolio-preview preview-light">
-
-                                <i class="bi bi-folder2-open"></i>
-
-                            </div>
-
-                            <div class="portfolio-content">
-
-                                <div class="portfolio-meta">
-
-                                    <span>CONCEPT PROJECT</span>
-
-                                    <span>ADMINISTRATION</span>
-
-                                </div>
-
-                                <h2>
-                                    Sistem Arsip Digital
-                                </h2>
-
-                                <p>
-                                    Prototype untuk membantu pencatatan,
-                                    pencarian, dan pengelolaan dokumen
-                                    administrasi secara lebih teratur.
-                                </p>
-
-                                <div class="portfolio-tags">
-
-                                    <span>Arsip</span>
-
-                                    <span>Dokumen</span>
-
-                                    <span>Administrasi</span>
-
-                                </div>
-
-                                <div class="portfolio-status">
-
-                                    <i class="bi bi-clock"></i>
-
-                                    Direncanakan
-
-                                </div>
-
-                            </div>
-
-                        </article>
-
+                    <div class="col-6 col-lg-3">
+                        <div class="overview-card">
+                            <strong>100%</strong>
+                            <span>Prototype / konsep</span>
+                        </div>
                     </div>
 
-
-                    <!-- Project 4 -->
-                    <div
-                        class="col-lg-6"
-                        data-aos="fade-up"
-                        data-aos-delay="100"
-                    >
-
-                        <article class="portfolio-card">
-
-                            <div class="portfolio-preview preview-gradient">
-
-                                <i class="bi bi-stars"></i>
-
-                            </div>
-
-                            <div class="portfolio-content">
-
-                                <div class="portfolio-meta">
-
-                                    <span>NASARA LAB</span>
-
-                                    <span>EXPERIMENT</span>
-
-                                </div>
-
-                                <h2>
-                                    Project Berikutnya
-                                </h2>
-
-                                <p>
-                                    Ruang untuk eksperimen dan project baru
-                                    yang berangkat dari masalah sederhana
-                                    di masyarakat, UMKM, sekolah, dan organisasi.
-                                </p>
-
-                                <div class="portfolio-tags">
-
-                                    <span>Experiment</span>
-
-                                    <span>Prototype</span>
-
-                                </div>
-
-                                <div class="portfolio-status">
-
-                                    <i class="bi bi-plus-circle"></i>
-
-                                    Akan datang
-
-                                </div>
-
-                            </div>
-
-                        </article>
-
+                    <div class="col-6 col-lg-3">
+                        <div class="overview-card">
+                            <strong>1</strong>
+                            <span>Masalah, 1 solusi</span>
+                        </div>
                     </div>
 
                 </div>
 
             </div>
+        </section>
 
+
+        <!-- Project Explorer -->
+        <section class="portfolio-explorer" id="projectExplorer">
+            <div class="container">
+
+                <div class="portfolio-section-head">
+                    <div>
+                        <span class="section-label">JELAJAHI PROJECT</span>
+                        <h2>Cari berdasarkan kebutuhan.</h2>
+                        <p>
+                            Gunakan pencarian atau pilih kategori untuk menemukan
+                            ide project yang paling dekat dengan kebutuhan.
+                        </p>
+                    </div>
+
+                    <div class="project-count" aria-live="polite">
+                        Menampilkan
+                        <strong id="projectResultCount">12</strong>
+                        project
+                    </div>
+                </div>
+
+
+                <!-- Tools -->
+                <div class="portfolio-tools">
+
+                    <div class="row g-2 align-items-center">
+
+                        <div class="col-lg-9">
+                            <div class="portfolio-search-wrap">
+                                <i class="bi bi-search"></i>
+                                <label for="projectSearch" class="visually-hidden">
+                                    Cari project
+                                </label>
+                                <input
+                                    type="search"
+                                    id="projectSearch"
+                                    class="portfolio-search"
+                                    placeholder="Cari: kasir, arsip, sekolah, UMKM, pelayanan..."
+                                    autocomplete="off"
+                                >
+                            </div>
+                        </div>
+
+                        <div class="col-lg-3">
+                            <label for="projectSort" class="visually-hidden">
+                                Urutkan project
+                            </label>
+                            <select id="projectSort" class="form-select portfolio-sort">
+                                <option value="default">Urutan rekomendasi</option>
+                                <option value="az">Nama A - Z</option>
+                                <option value="za">Nama Z - A</option>
+                            </select>
+                        </div>
+
+                    </div>
+
+                    <div
+                        class="portfolio-filters"
+                        role="group"
+                        aria-label="Filter kategori project"
+                    >
+                        <button class="portfolio-filter active" data-filter="all">
+                            Semua
+                        </button>
+
+                        <button class="portfolio-filter" data-filter="umkm">
+                            UMKM
+                        </button>
+
+                        <button class="portfolio-filter" data-filter="pemerintah">
+                            Pemerintah
+                        </button>
+
+                        <button class="portfolio-filter" data-filter="sekolah">
+                            Sekolah
+                        </button>
+
+                        <button class="portfolio-filter" data-filter="organisasi">
+                            Organisasi
+                        </button>
+
+                        <button class="portfolio-filter" data-filter="administrasi">
+                            Administrasi
+                        </button>
+
+                        <button class="portfolio-filter" data-filter="website">
+                            Website
+                        </button>
+                    </div>
+
+                </div>
+
+
+                <!-- Grid -->
+                <div class="row g-4" id="projectGrid">
+
+                    <!-- 01 -->
+                    <div
+                        class="col-md-6 col-xl-4 project-item"
+                        data-category="sekolah organisasi administrasi"
+                        data-order="1"
+                        data-aos="fade-up"
+                    >
+                        <article
+                            class="project-card-upgraded"
+                            data-title="Sistem Peminjaman Barang"
+                            data-problem="Peminjaman barang sering dicatat manual sehingga status barang, peminjam, dan waktu pengembalian sulit dipantau."
+                            data-solution="Sistem sederhana untuk mencatat barang, peminjam, tanggal pinjam, tanggal kembali, serta status pengembalian."
+                            data-target="Sekolah, organisasi, kantor kecil, ruang laboratorium, dan unit yang memiliki inventaris bersama."
+                        >
+                            <div class="project-visual visual-blue">
+                                <div class="visual-icon">
+                                    <i class="bi bi-box-seam"></i>
+                                </div>
+                                <span class="project-number">01</span>
+                            </div>
+
+                            <div class="project-body">
+                                <div class="project-meta">
+                                    <span class="concept">CONCEPT PROJECT</span>
+                                    <span>ADMINISTRASI</span>
+                                </div>
+
+                                <h3>Sistem Peminjaman Barang</h3>
+
+                                <p class="project-description">
+                                    Membantu pencatatan peminjaman dan pengembalian
+                                    barang agar lebih mudah dilacak.
+                                </p>
+
+                                <div class="project-tags">
+                                    <span>Sekolah</span>
+                                    <span>Inventaris</span>
+                                    <span>Organisasi</span>
+                                </div>
+
+                                <div class="project-footer">
+                                    <span class="project-status">
+                                        <i class="bi bi-hammer"></i>
+                                        Dalam pengembangan
+                                    </span>
+
+                                    <button
+                                        class="project-detail-btn"
+                                        type="button"
+                                        data-bs-toggle="modal"
+                                        data-bs-target="#projectModal"
+                                    >
+                                        Lihat ide
+                                        <i class="bi bi-arrow-right ms-1"></i>
+                                    </button>
+                                </div>
+                            </div>
+                        </article>
+                    </div>
+
+
+                    <!-- 02 -->
+                    <div
+                        class="col-md-6 col-xl-4 project-item"
+                        data-category="umkm administrasi"
+                        data-order="2"
+                        data-aos="fade-up"
+                        data-aos-delay="60"
+                    >
+                        <article
+                            class="project-card-upgraded"
+                            data-title="Sistem Pencatatan Servis"
+                            data-problem="Riwayat servis, keluhan pelanggan, biaya, dan pekerjaan teknisi sering tersebar di buku atau chat."
+                            data-solution="Aplikasi ringan untuk mencatat pelanggan, unit/barang, keluhan, pekerjaan, biaya, dan riwayat servis."
+                            data-target="Bengkel motor, servis elektronik, servis komputer, reparasi HP, dan usaha jasa sejenis."
+                        >
+                            <div class="project-visual visual-dark">
+                                <div class="visual-icon">
+                                    <i class="bi bi-tools"></i>
+                                </div>
+                                <span class="project-number">02</span>
+                            </div>
+
+                            <div class="project-body">
+                                <div class="project-meta">
+                                    <span class="concept">CONCEPT PROJECT</span>
+                                    <span>UMKM</span>
+                                </div>
+
+                                <h3>Sistem Pencatatan Servis</h3>
+
+                                <p class="project-description">
+                                    Pencatatan pelanggan, keluhan, pekerjaan,
+                                    biaya, dan riwayat servis dalam satu tempat.
+                                </p>
+
+                                <div class="project-tags">
+                                    <span>Bengkel</span>
+                                    <span>Servis</span>
+                                    <span>Riwayat</span>
+                                </div>
+
+                                <div class="project-footer">
+                                    <span class="project-status">
+                                        <i class="bi bi-lightbulb"></i>
+                                        Direncanakan
+                                    </span>
+
+                                    <button
+                                        class="project-detail-btn"
+                                        type="button"
+                                        data-bs-toggle="modal"
+                                        data-bs-target="#projectModal"
+                                    >
+                                        Lihat ide
+                                        <i class="bi bi-arrow-right ms-1"></i>
+                                    </button>
+                                </div>
+                            </div>
+                        </article>
+                    </div>
+
+
+                    <!-- 03 -->
+                    <div
+                        class="col-md-6 col-xl-4 project-item"
+                        data-category="pemerintah administrasi organisasi"
+                        data-order="3"
+                        data-aos="fade-up"
+                        data-aos-delay="120"
+                    >
+                        <article
+                            class="project-card-upgraded"
+                            data-title="Sistem Arsip Digital"
+                            data-problem="Dokumen yang tersimpan manual sering membutuhkan waktu lama untuk dicari kembali dan sulit dikelompokkan secara konsisten."
+                            data-solution="Sistem arsip dengan nomor dokumen, kategori, tanggal, keterangan, pencarian, dan lokasi file."
+                            data-target="Kantor kecil, organisasi, sekolah, desa/kelurahan, dan unit administrasi."
+                        >
+                            <div class="project-visual visual-soft">
+                                <div class="visual-icon">
+                                    <i class="bi bi-folder2-open"></i>
+                                </div>
+                                <span class="project-number">03</span>
+                            </div>
+
+                            <div class="project-body">
+                                <div class="project-meta">
+                                    <span class="concept">PROTOTYPE</span>
+                                    <span>ADMINISTRASI</span>
+                                </div>
+
+                                <h3>Sistem Arsip Digital</h3>
+
+                                <p class="project-description">
+                                    Membantu dokumen administrasi lebih mudah
+                                    dicatat, dikelompokkan, dan dicari kembali.
+                                </p>
+
+                                <div class="project-tags">
+                                    <span>Arsip</span>
+                                    <span>Dokumen</span>
+                                    <span>Pencarian</span>
+                                </div>
+
+                                <div class="project-footer">
+                                    <span class="project-status">
+                                        <i class="bi bi-lightbulb"></i>
+                                        Direncanakan
+                                    </span>
+
+                                    <button
+                                        class="project-detail-btn"
+                                        type="button"
+                                        data-bs-toggle="modal"
+                                        data-bs-target="#projectModal"
+                                    >
+                                        Lihat ide
+                                        <i class="bi bi-arrow-right ms-1"></i>
+                                    </button>
+                                </div>
+                            </div>
+                        </article>
+                    </div>
+
+
+                    <!-- 04 -->
+                    <div
+                        class="col-md-6 col-xl-4 project-item"
+                        data-category="umkm administrasi"
+                        data-order="4"
+                        data-aos="fade-up"
+                    >
+                        <article
+                            class="project-card-upgraded"
+                            data-title="Kasir & Pencatatan Transaksi UMKM"
+                            data-problem="Transaksi harian sering hanya dicatat di buku sehingga pemilik usaha kesulitan melihat total penjualan dan riwayat transaksi."
+                            data-solution="Kasir sederhana untuk mencatat produk, transaksi, total pembayaran, dan laporan penjualan dasar."
+                            data-target="Warung, kedai minuman, coffee shop kecil, toko, dan usaha penjualan sederhana."
+                        >
+                            <div class="project-visual visual-cyan">
+                                <div class="visual-icon">
+                                    <i class="bi bi-receipt"></i>
+                                </div>
+                                <span class="project-number">04</span>
+                            </div>
+
+                            <div class="project-body">
+                                <div class="project-meta">
+                                    <span class="concept">CONCEPT PROJECT</span>
+                                    <span>UMKM</span>
+                                </div>
+
+                                <h3>Kasir & Pencatatan Transaksi</h3>
+
+                                <p class="project-description">
+                                    Sistem kasir sederhana untuk mencatat penjualan,
+                                    produk, dan transaksi harian.
+                                </p>
+
+                                <div class="project-tags">
+                                    <span>Kasir</span>
+                                    <span>Transaksi</span>
+                                    <span>Laporan</span>
+                                </div>
+
+                                <div class="project-footer">
+                                    <span class="project-status">
+                                        <i class="bi bi-lightbulb"></i>
+                                        Konsep
+                                    </span>
+
+                                    <button
+                                        class="project-detail-btn"
+                                        type="button"
+                                        data-bs-toggle="modal"
+                                        data-bs-target="#projectModal"
+                                    >
+                                        Lihat ide
+                                        <i class="bi bi-arrow-right ms-1"></i>
+                                    </button>
+                                </div>
+                            </div>
+                        </article>
+                    </div>
+
+
+                    <!-- 05 -->
+                    <div
+                        class="col-md-6 col-xl-4 project-item"
+                        data-category="pemerintah administrasi organisasi"
+                        data-order="5"
+                        data-aos="fade-up"
+                        data-aos-delay="60"
+                    >
+                        <article
+                            class="project-card-upgraded"
+                            data-title="Buku Tamu Digital"
+                            data-problem="Data kunjungan masih ditulis pada buku tamu sehingga rekap jumlah kunjungan dan pencarian data lama tidak praktis."
+                            data-solution="Form tamu digital yang mencatat nama, instansi, tujuan, waktu datang, kontak, dan rekap kunjungan."
+                            data-target="Kantor pelayanan, sekolah, organisasi, kantor desa, dan ruang penerima tamu."
+                        >
+                            <div class="project-visual visual-slate">
+                                <div class="visual-icon">
+                                    <i class="bi bi-person-badge"></i>
+                                </div>
+                                <span class="project-number">05</span>
+                            </div>
+
+                            <div class="project-body">
+                                <div class="project-meta">
+                                    <span class="concept">CONCEPT PROJECT</span>
+                                    <span>PELAYANAN</span>
+                                </div>
+
+                                <h3>Buku Tamu Digital</h3>
+
+                                <p class="project-description">
+                                    Pencatatan pengunjung dan tujuan kedatangan
+                                    dengan rekap yang lebih mudah dilihat.
+                                </p>
+
+                                <div class="project-tags">
+                                    <span>Kantor</span>
+                                    <span>Tamu</span>
+                                    <span>Rekap</span>
+                                </div>
+
+                                <div class="project-footer">
+                                    <span class="project-status">
+                                        <i class="bi bi-lightbulb"></i>
+                                        Konsep
+                                    </span>
+
+                                    <button
+                                        class="project-detail-btn"
+                                        type="button"
+                                        data-bs-toggle="modal"
+                                        data-bs-target="#projectModal"
+                                    >
+                                        Lihat ide
+                                        <i class="bi bi-arrow-right ms-1"></i>
+                                    </button>
+                                </div>
+                            </div>
+                        </article>
+                    </div>
+
+
+                    <!-- 06 -->
+                    <div
+                        class="col-md-6 col-xl-4 project-item"
+                        data-category="pemerintah sekolah organisasi administrasi"
+                        data-order="6"
+                        data-aos="fade-up"
+                        data-aos-delay="120"
+                    >
+                        <article
+                            class="project-card-upgraded"
+                            data-title="Sistem Inventaris Aset"
+                            data-problem="Data barang dan aset sering tersebar sehingga jumlah, lokasi, kondisi, serta penanggung jawab sulit diperiksa dengan cepat."
+                            data-solution="Pendataan aset dengan kode barang, kategori, lokasi, kondisi, jumlah, dan riwayat perubahan."
+                            data-target="Sekolah, kantor, organisasi, desa/kelurahan, dan unit kerja kecil."
+                        >
+                            <div class="project-visual visual-indigo">
+                                <div class="visual-icon">
+                                    <i class="bi bi-boxes"></i>
+                                </div>
+                                <span class="project-number">06</span>
+                            </div>
+
+                            <div class="project-body">
+                                <div class="project-meta">
+                                    <span class="concept">PROTOTYPE</span>
+                                    <span>INVENTARIS</span>
+                                </div>
+
+                                <h3>Sistem Inventaris Aset</h3>
+
+                                <p class="project-description">
+                                    Pendataan barang, lokasi, kondisi, dan jumlah
+                                    aset agar lebih rapi dan mudah diperiksa.
+                                </p>
+
+                                <div class="project-tags">
+                                    <span>Aset</span>
+                                    <span>Kantor</span>
+                                    <span>Sekolah</span>
+                                </div>
+
+                                <div class="project-footer">
+                                    <span class="project-status">
+                                        <i class="bi bi-lightbulb"></i>
+                                        Direncanakan
+                                    </span>
+
+                                    <button
+                                        class="project-detail-btn"
+                                        type="button"
+                                        data-bs-toggle="modal"
+                                        data-bs-target="#projectModal"
+                                    >
+                                        Lihat ide
+                                        <i class="bi bi-arrow-right ms-1"></i>
+                                    </button>
+                                </div>
+                            </div>
+                        </article>
+                    </div>
+
+
+                    <!-- 07 -->
+                    <div
+                        class="col-md-6 col-xl-4 project-item"
+                        data-category="pemerintah administrasi"
+                        data-order="7"
+                        data-aos="fade-up"
+                    >
+                        <article
+                            class="project-card-upgraded"
+                            data-title="Sistem Antrian Pelayanan"
+                            data-problem="Antrian manual dapat membuat urutan pelayanan tidak jelas dan petugas kesulitan memantau jumlah warga yang menunggu."
+                            data-solution="Sistem nomor antrian sederhana dengan daftar tunggu, pemanggilan nomor, status pelayanan, dan rekap harian."
+                            data-target="Loket kantor kecil, pelayanan desa/kelurahan, klinik kecil, dan unit pelayanan sederhana."
+                        >
+                            <div class="project-visual visual-teal">
+                                <div class="visual-icon">
+                                    <i class="bi bi-people"></i>
+                                </div>
+                                <span class="project-number">07</span>
+                            </div>
+
+                            <div class="project-body">
+                                <div class="project-meta">
+                                    <span class="concept">CONCEPT PROJECT</span>
+                                    <span>PELAYANAN</span>
+                                </div>
+
+                                <h3>Sistem Antrian Pelayanan</h3>
+
+                                <p class="project-description">
+                                    Membantu mengatur nomor antrian dan status
+                                    pelayanan secara sederhana.
+                                </p>
+
+                                <div class="project-tags">
+                                    <span>Antrian</span>
+                                    <span>Pelayanan</span>
+                                    <span>Loket</span>
+                                </div>
+
+                                <div class="project-footer">
+                                    <span class="project-status">
+                                        <i class="bi bi-lightbulb"></i>
+                                        Konsep
+                                    </span>
+
+                                    <button
+                                        class="project-detail-btn"
+                                        type="button"
+                                        data-bs-toggle="modal"
+                                        data-bs-target="#projectModal"
+                                    >
+                                        Lihat ide
+                                        <i class="bi bi-arrow-right ms-1"></i>
+                                    </button>
+                                </div>
+                            </div>
+                        </article>
+                    </div>
+
+
+                    <!-- 08 -->
+                    <div
+                        class="col-md-6 col-xl-4 project-item"
+                        data-category="pemerintah administrasi"
+                        data-order="8"
+                        data-aos="fade-up"
+                        data-aos-delay="60"
+                    >
+                        <article
+                            class="project-card-upgraded"
+                            data-title="Pendataan Program Bantuan"
+                            data-problem="Data calon penerima, kelengkapan berkas, dan status verifikasi dapat sulit ditelusuri jika masih tersebar di banyak file."
+                            data-solution="Sistem pendataan internal untuk mencatat calon penerima, kriteria, berkas, status pemeriksaan, dan rekap data."
+                            data-target="Unit pelayanan sosial, organisasi sosial, desa/kelurahan, dan panitia program bantuan."
+                        >
+                            <div class="project-visual visual-sky">
+                                <div class="visual-icon">
+                                    <i class="bi bi-clipboard2-data"></i>
+                                </div>
+                                <span class="project-number">08</span>
+                            </div>
+
+                            <div class="project-body">
+                                <div class="project-meta">
+                                    <span class="concept">CONCEPT PROJECT</span>
+                                    <span>PENDATAAN</span>
+                                </div>
+
+                                <h3>Pendataan Program Bantuan</h3>
+
+                                <p class="project-description">
+                                    Pencatatan calon penerima, dokumen, dan status
+                                    verifikasi agar proses pendataan lebih teratur.
+                                </p>
+
+                                <div class="project-tags">
+                                    <span>Data</span>
+                                    <span>Verifikasi</span>
+                                    <span>Administrasi</span>
+                                </div>
+
+                                <div class="project-footer">
+                                    <span class="project-status">
+                                        <i class="bi bi-lightbulb"></i>
+                                        Konsep
+                                    </span>
+
+                                    <button
+                                        class="project-detail-btn"
+                                        type="button"
+                                        data-bs-toggle="modal"
+                                        data-bs-target="#projectModal"
+                                    >
+                                        Lihat ide
+                                        <i class="bi bi-arrow-right ms-1"></i>
+                                    </button>
+                                </div>
+                            </div>
+                        </article>
+                    </div>
+
+
+                    <!-- 09 -->
+                    <div
+                        class="col-md-6 col-xl-4 project-item"
+                        data-category="sekolah organisasi administrasi"
+                        data-order="9"
+                        data-aos="fade-up"
+                        data-aos-delay="120"
+                    >
+                        <article
+                            class="project-card-upgraded"
+                            data-title="Absensi Kegiatan"
+                            data-problem="Daftar hadir kegiatan sering menggunakan kertas atau pesan chat sehingga rekap peserta membutuhkan waktu tambahan."
+                            data-solution="Absensi digital sederhana dengan daftar peserta, waktu hadir, kegiatan, dan rekap kehadiran."
+                            data-target="Sekolah, kelas, organisasi, pelatihan, rapat, dan kegiatan komunitas."
+                        >
+                            <div class="project-visual visual-blue">
+                                <div class="visual-icon">
+                                    <i class="bi bi-calendar2-check"></i>
+                                </div>
+                                <span class="project-number">09</span>
+                            </div>
+
+                            <div class="project-body">
+                                <div class="project-meta">
+                                    <span class="concept">PROTOTYPE</span>
+                                    <span>SEKOLAH</span>
+                                </div>
+
+                                <h3>Absensi Kegiatan</h3>
+
+                                <p class="project-description">
+                                    Pencatatan kehadiran untuk kegiatan, rapat,
+                                    pelatihan, kelas, atau organisasi.
+                                </p>
+
+                                <div class="project-tags">
+                                    <span>Absensi</span>
+                                    <span>Kegiatan</span>
+                                    <span>Rekap</span>
+                                </div>
+
+                                <div class="project-footer">
+                                    <span class="project-status">
+                                        <i class="bi bi-lightbulb"></i>
+                                        Direncanakan
+                                    </span>
+
+                                    <button
+                                        class="project-detail-btn"
+                                        type="button"
+                                        data-bs-toggle="modal"
+                                        data-bs-target="#projectModal"
+                                    >
+                                        Lihat ide
+                                        <i class="bi bi-arrow-right ms-1"></i>
+                                    </button>
+                                </div>
+                            </div>
+                        </article>
+                    </div>
+
+
+                    <!-- 10 -->
+                    <div
+                        class="col-md-6 col-xl-4 project-item"
+                        data-category="umkm website"
+                        data-order="10"
+                        data-aos="fade-up"
+                    >
+                        <article
+                            class="project-card-upgraded"
+                            data-title="Katalog Produk UMKM"
+                            data-problem="Usaha kecil sering hanya menampilkan produk melalui chat atau posting media sosial sehingga daftar produk cepat tenggelam."
+                            data-solution="Website katalog ringan yang menampilkan produk, harga, informasi usaha, dan tombol pemesanan melalui WhatsApp."
+                            data-target="UMKM makanan, kerajinan, fashion, toko rumahan, dan usaha lokal lainnya."
+                        >
+                            <div class="project-visual visual-dark">
+                                <div class="visual-icon">
+                                    <i class="bi bi-shop"></i>
+                                </div>
+                                <span class="project-number">10</span>
+                            </div>
+
+                            <div class="project-body">
+                                <div class="project-meta">
+                                    <span class="concept">CONCEPT PROJECT</span>
+                                    <span>WEBSITE</span>
+                                </div>
+
+                                <h3>Katalog Produk UMKM</h3>
+
+                                <p class="project-description">
+                                    Website katalog sederhana agar produk usaha
+                                    lebih mudah dilihat dan dibagikan.
+                                </p>
+
+                                <div class="project-tags">
+                                    <span>Website</span>
+                                    <span>Produk</span>
+                                    <span>WhatsApp</span>
+                                </div>
+
+                                <div class="project-footer">
+                                    <span class="project-status">
+                                        <i class="bi bi-lightbulb"></i>
+                                        Konsep
+                                    </span>
+
+                                    <button
+                                        class="project-detail-btn"
+                                        type="button"
+                                        data-bs-toggle="modal"
+                                        data-bs-target="#projectModal"
+                                    >
+                                        Lihat ide
+                                        <i class="bi bi-arrow-right ms-1"></i>
+                                    </button>
+                                </div>
+                            </div>
+                        </article>
+                    </div>
+
+
+                    <!-- 11 -->
+                    <div
+                        class="col-md-6 col-xl-4 project-item"
+                        data-category="organisasi administrasi"
+                        data-order="11"
+                        data-aos="fade-up"
+                        data-aos-delay="60"
+                    >
+                        <article
+                            class="project-card-upgraded"
+                            data-title="Pencatatan Iuran Organisasi"
+                            data-problem="Catatan iuran anggota sering terpisah antara buku, chat, dan spreadsheet sehingga status pembayaran sulit dicek cepat."
+                            data-solution="Sistem sederhana untuk anggota, periode iuran, pembayaran, tunggakan, dan rekap pemasukan."
+                            data-target="Komunitas, organisasi kecil, perkumpulan, kelompok usaha, dan kepanitiaan."
+                        >
+                            <div class="project-visual visual-indigo">
+                                <div class="visual-icon">
+                                    <i class="bi bi-wallet2"></i>
+                                </div>
+                                <span class="project-number">11</span>
+                            </div>
+
+                            <div class="project-body">
+                                <div class="project-meta">
+                                    <span class="concept">CONCEPT PROJECT</span>
+                                    <span>ORGANISASI</span>
+                                </div>
+
+                                <h3>Pencatatan Iuran Organisasi</h3>
+
+                                <p class="project-description">
+                                    Membantu mencatat pembayaran iuran dan melihat
+                                    status pembayaran anggota.
+                                </p>
+
+                                <div class="project-tags">
+                                    <span>Iuran</span>
+                                    <span>Anggota</span>
+                                    <span>Keuangan</span>
+                                </div>
+
+                                <div class="project-footer">
+                                    <span class="project-status">
+                                        <i class="bi bi-lightbulb"></i>
+                                        Konsep
+                                    </span>
+
+                                    <button
+                                        class="project-detail-btn"
+                                        type="button"
+                                        data-bs-toggle="modal"
+                                        data-bs-target="#projectModal"
+                                    >
+                                        Lihat ide
+                                        <i class="bi bi-arrow-right ms-1"></i>
+                                    </button>
+                                </div>
+                            </div>
+                        </article>
+                    </div>
+
+
+                    <!-- 12 -->
+                    <div
+                        class="col-md-6 col-xl-4 project-item"
+                        data-category="pemerintah sekolah organisasi administrasi"
+                        data-order="12"
+                        data-aos="fade-up"
+                        data-aos-delay="120"
+                    >
+                        <article
+                            class="project-card-upgraded"
+                            data-title="Surat Masuk & Surat Keluar"
+                            data-problem="Pencatatan surat yang hanya menggunakan buku agenda membuat pencarian nomor surat, tanggal, dan disposisi memerlukan waktu."
+                            data-solution="Agenda digital untuk surat masuk dan keluar lengkap dengan nomor, tanggal, asal/tujuan, perihal, dan status."
+                            data-target="Sekolah, organisasi, kantor kecil, desa/kelurahan, dan unit administrasi."
+                        >
+                            <div class="project-visual visual-cyan">
+                                <div class="visual-icon">
+                                    <i class="bi bi-envelope-paper"></i>
+                                </div>
+                                <span class="project-number">12</span>
+                            </div>
+
+                            <div class="project-body">
+                                <div class="project-meta">
+                                    <span class="concept">PROTOTYPE</span>
+                                    <span>ADMINISTRASI</span>
+                                </div>
+
+                                <h3>Surat Masuk & Surat Keluar</h3>
+
+                                <p class="project-description">
+                                    Agenda surat digital agar pencatatan dan
+                                    pencarian surat lebih mudah dilakukan.
+                                </p>
+
+                                <div class="project-tags">
+                                    <span>Surat</span>
+                                    <span>Agenda</span>
+                                    <span>Dokumen</span>
+                                </div>
+
+                                <div class="project-footer">
+                                    <span class="project-status">
+                                        <i class="bi bi-lightbulb"></i>
+                                        Direncanakan
+                                    </span>
+
+                                    <button
+                                        class="project-detail-btn"
+                                        type="button"
+                                        data-bs-toggle="modal"
+                                        data-bs-target="#projectModal"
+                                    >
+                                        Lihat ide
+                                        <i class="bi bi-arrow-right ms-1"></i>
+                                    </button>
+                                </div>
+                            </div>
+                        </article>
+                    </div>
+
+                </div>
+
+
+                <!-- Empty Search -->
+                <div class="portfolio-empty mt-4" id="portfolioEmpty">
+                    <i class="bi bi-search"></i>
+                    <h3>Project belum ditemukan</h3>
+                    <p>
+                        Coba gunakan kata pencarian lain atau pilih kategori Semua.
+                    </p>
+                </div>
+
+            </div>
         </section>
 
 
         <!-- CTA -->
-        <section class="portfolio-cta">
-
+        <section class="portfolio-idea">
             <div class="container">
 
-                <div
-                    class="portfolio-cta-box"
-                    data-aos="fade-up"
-                >
+                <div class="idea-box" data-aos="fade-up">
+                    <div class="row align-items-center g-4">
 
-                    <div>
+                        <div class="col-lg-8">
+                            <span class="section-label">
+                                TIDAK MENEMUKAN YANG COCOK?
+                            </span>
 
-                        <span class="section-label">
-                            PUNYA MASALAH YANG MIRIP?
-                        </span>
+                            <h2>
+                                Project tidak harus besar.
+                                Mulai dari satu masalah yang ingin diselesaikan.
+                            </h2>
 
-                        <h2>
-                            Mungkin kita bisa mencari
-                            solusi sederhananya.
-                        </h2>
+                            <p>
+                                Ceritakan proses yang masih dilakukan manual.
+                                Dari sana kita bisa melihat apakah website,
+                                aplikasi sederhana, atau digitalisasi kecil
+                                sudah cukup membantu.
+                            </p>
+                        </div>
+
+                        <div class="col-lg-4 text-lg-end">
+                            <a href="/links/" class="btn btn-light btn-lg">
+                                Ceritakan Kebutuhan
+                                <i class="bi bi-arrow-right ms-2"></i>
+                            </a>
+                        </div>
 
                     </div>
-
-                    <a
-                        href="/links/"
-                        class="btn btn-nasara btn-lg"
-                    >
-                        Konsultasi Gratis Sekarang
-                        <i class="bi bi-arrow-right ms-2"></i>
-                    </a>
-
                 </div>
 
             </div>
-
         </section>
 
     </main>
 
 
+    <!-- Project Detail Modal -->
+    <div
+        class="modal fade project-modal"
+        id="projectModal"
+        tabindex="-1"
+        aria-labelledby="projectModalTitle"
+        aria-hidden="true"
+    >
+        <div class="modal-dialog modal-dialog-centered modal-lg">
+            <div class="modal-content">
+
+                <div class="modal-header">
+                    <div>
+                        <span class="modal-project-label">
+                            CONCEPT PROJECT / PROTOTYPE
+                        </span>
+                        <h2 class="modal-title fs-4 fw-bold" id="projectModalTitle">
+                            Detail Project
+                        </h2>
+                    </div>
+
+                    <button
+                        type="button"
+                        class="btn-close"
+                        data-bs-dismiss="modal"
+                        aria-label="Tutup"
+                    ></button>
+                </div>
+
+                <div class="modal-body">
+
+                    <div class="modal-section pt-0">
+                        <small>MASALAH</small>
+                        <p id="modalProblem"></p>
+                    </div>
+
+                    <div class="modal-section">
+                        <small>IDE SOLUSI</small>
+                        <p id="modalSolution"></p>
+                    </div>
+
+                    <div class="modal-section">
+                        <small>COCOK UNTUK</small>
+                        <p id="modalTarget"></p>
+                    </div>
+
+                    <div class="pt-4">
+                        <a href="/links/" class="btn btn-nasara">
+                            Diskusikan Ide Serupa
+                            <i class="bi bi-arrow-right ms-2"></i>
+                        </a>
+                    </div>
+
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+
+    <!-- Footer -->
     <footer class="footer-section">
-
         <div class="container">
-
             <div class="footer-bottom mt-0">
-
-                <span>
-                    © 2026 NASARA DIGITAL
-                </span>
+                <span>© 2026 NASARA DIGITAL</span>
 
                 <a href="/" class="footer-home">
                     Kembali ke Beranda
                 </a>
-
             </div>
-
         </div>
-
     </footer>
 
 
@@ -500,12 +1820,147 @@
     </script>
 
     <!-- AOS -->
-    <script
-        src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js">
-    </script>
+    <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
 
+    <!-- Existing NASARA JS -->
     <script src="../assets/js/script.js"></script>
 
-</body>
+    <!-- Portfolio Search / Filter / Sort / Detail -->
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
 
+            const searchInput = document.getElementById("projectSearch");
+            const sortSelect = document.getElementById("projectSort");
+            const filterButtons = document.querySelectorAll(".portfolio-filter");
+            const projectGrid = document.getElementById("projectGrid");
+            const projectItems = Array.from(document.querySelectorAll(".project-item"));
+            const resultCount = document.getElementById("projectResultCount");
+            const totalOverview = document.getElementById("totalProjectOverview");
+            const emptyState = document.getElementById("portfolioEmpty");
+
+            let activeFilter = "all";
+
+            totalOverview.textContent = projectItems.length;
+
+            function getSearchableText(item) {
+                return item.textContent.toLowerCase().replace(/\s+/g, " ");
+            }
+
+            function updateProjects() {
+                const keyword = searchInput.value.trim().toLowerCase();
+                let visibleCount = 0;
+
+                projectItems.forEach(function (item) {
+                    const categories = item.dataset.category
+                        .toLowerCase()
+                        .split(" ");
+
+                    const searchableText = getSearchableText(item);
+
+                    const categoryMatch =
+                        activeFilter === "all" ||
+                        categories.includes(activeFilter);
+
+                    const keywordMatch =
+                        keyword === "" ||
+                        searchableText.includes(keyword);
+
+                    const show = categoryMatch && keywordMatch;
+
+                    item.style.display = show ? "" : "none";
+
+                    if (show) {
+                        visibleCount++;
+                    }
+                });
+
+                resultCount.textContent = visibleCount;
+                emptyState.style.display = visibleCount === 0 ? "block" : "none";
+            }
+
+            filterButtons.forEach(function (button) {
+                button.addEventListener("click", function () {
+
+                    filterButtons.forEach(function (btn) {
+                        btn.classList.remove("active");
+                    });
+
+                    button.classList.add("active");
+                    activeFilter = button.dataset.filter;
+
+                    updateProjects();
+                });
+            });
+
+            searchInput.addEventListener("input", updateProjects);
+
+            sortSelect.addEventListener("change", function () {
+                const sortMode = sortSelect.value;
+
+                const sortedItems = [...projectItems].sort(function (a, b) {
+
+                    if (sortMode === "az" || sortMode === "za") {
+                        const titleA = a
+                            .querySelector("h3")
+                            .textContent
+                            .trim()
+                            .toLowerCase();
+
+                        const titleB = b
+                            .querySelector("h3")
+                            .textContent
+                            .trim()
+                            .toLowerCase();
+
+                        const comparison = titleA.localeCompare(titleB, "id");
+
+                        return sortMode === "az"
+                            ? comparison
+                            : -comparison;
+                    }
+
+                    return Number(a.dataset.order) - Number(b.dataset.order);
+                });
+
+                sortedItems.forEach(function (item) {
+                    projectGrid.appendChild(item);
+                });
+            });
+
+
+            // Isi modal berdasarkan kartu yang diklik.
+            document.querySelectorAll(".project-detail-btn").forEach(function (button) {
+                button.addEventListener("click", function () {
+
+                    const card = button.closest(".project-card-upgraded");
+
+                    document.getElementById("projectModalTitle").textContent =
+                        card.dataset.title;
+
+                    document.getElementById("modalProblem").textContent =
+                        card.dataset.problem;
+
+                    document.getElementById("modalSolution").textContent =
+                        card.dataset.solution;
+
+                    document.getElementById("modalTarget").textContent =
+                        card.dataset.target;
+                });
+            });
+
+
+            // Init AOS bila belum diinisialisasi oleh script.js.
+            if (typeof AOS !== "undefined") {
+                AOS.init({
+                    duration: 650,
+                    once: true,
+                    offset: 40
+                });
+            }
+
+            updateProjects();
+        });
+    </script>
+
+</body>
 </html>
